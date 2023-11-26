@@ -38,14 +38,14 @@ class NewOrderScreen extends StatelessWidget {
                     "Hello, AbdAllah",
                     style: TextStyle(
                       color: mainColor,
-                      fontSize: 25,
+                      fontSize: 35,
                     ),
                   ),
                   Text(
                     "User IP 031123",
                     style: TextStyle(
                       color: darkGrey,
-                      fontSize: 15,
+                      fontSize: 21,
                     ),
                   ),
                 ],
@@ -59,7 +59,7 @@ class NewOrderScreen extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 120,
+          height: 146,
           child: Row(
             children: [
               Expanded(
@@ -73,19 +73,32 @@ class NewOrderScreen extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               Assets.iconify("phone"),
+                              height: 32,
                             ),
                             const SizedBox(width: 10),
                             Text(
                               "966",
                               style: TextStyle(
                                 color: darkGrey,
-                                fontSize: 28,
+                                fontSize: 32,
                                 fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 8.0),
+                              child: VerticalDivider(
+                                thickness: 1,
+                                width: 15,
+                                color: darkGrey,
                               ),
                             ),
                           ],
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 10,
                     ),
                     Expanded(
                       child: ColoredBox(
@@ -98,7 +111,10 @@ class NewOrderScreen extends StatelessWidget {
                                   ? "steaming"
                                   : "laundry"),
                               color: mainColor,
-                              width: 30,
+                              width: 40,
+                            ),
+                            const SizedBox(
+                              width: 15,
                             ),
                             Text(
                               orderType == OrderType.Ironing
@@ -106,7 +122,7 @@ class NewOrderScreen extends StatelessWidget {
                                   : "Cleaning & Ironing",
                               style: TextStyle(
                                 color: mainColor,
-                                fontSize: 18,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
                             )
@@ -135,7 +151,7 @@ class NewOrderScreen extends StatelessWidget {
                             "Invoice 031123",
                             style: TextStyle(
                               color: darkGrey,
-                              fontSize: 18,
+                              fontSize: 22,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -152,7 +168,7 @@ class NewOrderScreen extends StatelessWidget {
                                 "Total",
                                 style: TextStyle(
                                   color: darkGrey,
-                                  fontSize: 23,
+                                  fontSize: 35,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -161,7 +177,7 @@ class NewOrderScreen extends StatelessWidget {
                                   text: '32x ',
                                   style: TextStyle(
                                     color: white,
-                                    fontSize: 18,
+                                    fontSize: 26,
                                     fontWeight: FontWeight.bold,
                                   ),
                                   children: const <TextSpan>[
@@ -169,6 +185,7 @@ class NewOrderScreen extends StatelessWidget {
                                       text: 'Items',
                                       style: TextStyle(
                                         fontWeight: FontWeight.normal,
+                                        fontSize: 25,
                                       ),
                                     ),
                                   ],
@@ -181,13 +198,13 @@ class NewOrderScreen extends StatelessWidget {
                               text: '320 ',
                               style: TextStyle(
                                 color: white,
-                                fontSize: 32,
+                                fontSize: 65,
                               ),
                               children: const <TextSpan>[
                                 TextSpan(
                                   text: 'SAR',
                                   style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 21,
                                   ),
                                 ),
                               ],
@@ -210,10 +227,10 @@ class NewOrderScreen extends StatelessWidget {
                 (i) => Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: List.generate(4, (j) {
-                    ClotheItem item = ClothesRepo.clothe_items[2 * i + j];
+                    ClotheItem item = ClothesRepo.clothe_items[4 * i + j];
                     return Container(
-                      height: 170,
-                      width: 170,
+                      height: 175,
+                      width: 150,
                       margin: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
@@ -232,9 +249,9 @@ class NewOrderScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Container(
-                            height: 40,
+                            height: 35,
                             width: double.infinity,
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.only(left: 5),
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.vertical(
                                   top: Radius.circular(20)),
@@ -246,25 +263,37 @@ class NewOrderScreen extends StatelessWidget {
                                   item.name,
                                   style: TextStyle(
                                     color: white,
-                                    fontSize: 15,
+                                    fontSize: 12,
                                   ),
                                 ),
                                 const Spacer(),
-                                Transform.rotate(
-                                  angle: pi,
-                                  child: Divider(
-                                    thickness: 4,
-                                    height: 55,
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 5.0),
+                                  child: VerticalDivider(
+                                    thickness: 1.5,
+                                    width: 1.5,
                                     color: white,
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 55,
-                                  child: Text(
-                                    '${item.price}SAR',
-                                    style: TextStyle(
-                                      color: white,
-                                      fontSize: 15,
+                                  width: 53.5,
+                                  child: RichText(
+                                    textAlign: TextAlign.center,
+                                    text: TextSpan(
+                                      text: '${item.price}',
+                                      style: TextStyle(
+                                        color: white,
+                                        fontSize: 20,
+                                      ),
+                                      children: const <TextSpan>[
+                                        TextSpan(
+                                          text: 'SAR',
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -272,7 +301,7 @@ class NewOrderScreen extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            height: 40,
+                            height: 35,
                             width: 55,
                             color: mainColor.withOpacity(.7),
                             child: Center(
@@ -287,7 +316,7 @@ class NewOrderScreen extends StatelessWidget {
                           ),
                           const Spacer(),
                           Container(
-                            height: 40,
+                            height: 35,
                             width: double.infinity,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.vertical(
@@ -295,25 +324,39 @@ class NewOrderScreen extends StatelessWidget {
                               color: mainColor.withOpacity(.7),
                             ),
                             child: Row(
-                              children: [Icons.remove, Icons.add]
-                                  .map(
-                                    (icon) => Expanded(
-                                      child: InkWell(
-                                        onTap: () {
-                                          if (icon == Icons.add) {
-                                            item.quantity++;
-                                          } else {
-                                            item.quantity--;
-                                          }
-                                        },
-                                        child: Icon(
-                                          icon,
-                                          color: white,
-                                        ),
-                                      ),
+                              children: [
+                                Expanded(
+                                  child: InkWell(
+                                    onTap: () {
+                                      item.quantity++;
+                                    },
+                                    child: Icon(
+                                      Icons.remove,
+                                      color: white,
                                     ),
-                                  )
-                                  .toList(),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 5.0),
+                                  child: VerticalDivider(
+                                    thickness: 1.5,
+                                    width: 1.5,
+                                    color: white,
+                                  ),
+                                ),
+                                Expanded(
+                                  child: InkWell(
+                                    onTap: () {
+                                      item.quantity++;
+                                    },
+                                    child: Icon(
+                                      Icons.add,
+                                      color: white,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],

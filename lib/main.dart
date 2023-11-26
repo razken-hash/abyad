@@ -1,15 +1,19 @@
+import 'dart:io';
+
 import 'package:abyad/screens/abyad_nav_screen.dart';
 import 'package:abyad/utils/providers.dart';
+import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const Ro9yaApp());
+  await DesktopWindow.setWindowSize(const Size(800, 1200));
+  runApp(const AbyadApp());
 }
 
-class Ro9yaApp extends StatelessWidget {
-  const Ro9yaApp({super.key});
+class AbyadApp extends StatelessWidget {
+  const AbyadApp({super.key});
 
   @override
   Widget build(BuildContext context) {

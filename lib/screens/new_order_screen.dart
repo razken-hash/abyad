@@ -206,15 +206,14 @@ class NewOrderScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: List.generate(
-                // 2,
-                ClothesRepo.clothe_items.length ~/ 2,
+                ClothesRepo.clothe_items.length ~/ 4,
                 (i) => Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: List.generate(2, (j) {
+                  children: List.generate(4, (j) {
                     ClotheItem item = ClothesRepo.clothe_items[2 * i + j];
                     return Container(
-                      height: 165,
-                      width: 165,
+                      height: 170,
+                      width: 170,
                       margin: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),

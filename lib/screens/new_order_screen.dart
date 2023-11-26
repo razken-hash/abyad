@@ -1,14 +1,10 @@
-import 'dart:math';
-
-import 'package:abyad/models/clothe_item.dart';
+import 'package:abyad/main.dart';
 import 'package:abyad/models/view_models/navigation_item.dart';
 import 'package:abyad/repositories/clothes_repo.dart';
+import 'package:abyad/screens/widgets/abyad_bar.dart';
 import 'package:abyad/screens/widgets/abyad_bar_two.dart';
 import 'package:abyad/screens/widgets/item_card.dart';
-import 'package:abyad/utils/assets.dart';
-import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class NewOrderScreen extends StatelessWidget {
   final OrderType orderType;
@@ -18,8 +14,8 @@ class NewOrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AppBar(),
-        AppBarTwo(orderType: orderType),
+        const AbyadBar(),
+        AbyadBarTwo(orderType: orderType),
         Expanded(
           child: SingleChildScrollView(
             child: Column(

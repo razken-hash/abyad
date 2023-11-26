@@ -3,10 +3,15 @@ import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class ItemCard extends StatelessWidget {
-  ClotheItem clotheItem;
-  ItemCard({super.key, required this.clotheItem});
+class ItemCard extends StatefulWidget {
+  final ClotheItem clotheItem;
+  const ItemCard({super.key, required this.clotheItem});
 
+  @override
+  State<ItemCard> createState() => _ItemCardState();
+}
+
+class _ItemCardState extends State<ItemCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +23,7 @@ class ItemCard extends StatelessWidget {
         image: DecorationImage(
           image: AssetImage(
             Assets.imagify(
-              clotheItem.name.toLowerCase(),
+              widget.clotheItem.name.toLowerCase(),
               directory: "${Assets.defaultImagesDirectory}/clothes",
             ),
           ),
@@ -40,7 +45,7 @@ class ItemCard extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  clotheItem.name,
+                  widget.clotheItem.name,
                   style: TextStyle(
                     color: white,
                     fontSize: 12,
@@ -60,7 +65,7 @@ class ItemCard extends StatelessWidget {
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      text: '${clotheItem.price}',
+                      text: '${widget.clotheItem.price}',
                       style: TextStyle(
                         color: white,
                         fontSize: 20,
@@ -85,7 +90,7 @@ class ItemCard extends StatelessWidget {
             color: mainColor.withOpacity(.7),
             child: Center(
               child: Text(
-                '${clotheItem.quantity}',
+                '${widget.clotheItem.quantity}',
                 style: TextStyle(
                   color: white,
                   fontSize: 26,
@@ -107,7 +112,9 @@ class ItemCard extends StatelessWidget {
                 Expanded(
                   child: InkWell(
                     onTap: () {
-                      clotheItem.quantity++;
+                      setState(() {
+                        widget.clotheItem.quantity++;
+                      });
                     },
                     child: Icon(
                       Icons.remove,
@@ -126,7 +133,9 @@ class ItemCard extends StatelessWidget {
                 Expanded(
                   child: InkWell(
                     onTap: () {
-                      clotheItem.quantity++;
+                      setState(() {
+                        widget.clotheItem.quantity++;
+                      });
                     },
                     child: Icon(
                       Icons.add,

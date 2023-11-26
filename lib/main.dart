@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:abyad/screens/abyad_nav_screen.dart';
 import 'package:abyad/utils/providers.dart';
 import 'package:desktop_window/desktop_window.dart';

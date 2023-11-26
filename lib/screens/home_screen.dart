@@ -1,6 +1,7 @@
 import 'package:abyad/controllers/navigation_controller.dart';
 import 'package:abyad/models/view_models/navigation_item.dart';
 import 'package:abyad/screens/new_order_screen.dart';
+import 'package:abyad/screens/widgets/abyad_bar.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AppBar(),
+        const AbyadBar(),
         Container(
           margin: const EdgeInsets.only(top: 40, bottom: 80),
           height: 90,

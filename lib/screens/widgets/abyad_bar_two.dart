@@ -4,9 +4,9 @@ import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AppBarTwo extends StatelessWidget {
+class AbyadBarTwo extends StatelessWidget {
   final OrderType orderType;
-  const AppBarTwo({super.key, required this.orderType});
+  const AbyadBarTwo({super.key, required this.orderType});
 
   @override
   Widget build(BuildContext context) {

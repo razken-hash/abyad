@@ -12,11 +12,11 @@ LinearGradient backgroundGradient = const LinearGradient(
   ],
 );
 
-Color mainColor = const Color(0xFF00BFFE),
-    altColor = const Color(0xFF6B581D),
+const Color mainColor = Color(0xFF00BFFE),
+    altColor = Color(0xFF6B581D),
     white = Colors.white,
-    grey = const Color(0xFFD5D5D5),
-    darkGrey = const Color(0xFF707070),
-    green = const Color(0xFF13AC6B),
-    bgColor = const Color(0xFFF4F4F4),
-    red = const Color(0xFFD82B46);
+    grey = Color(0xFFD5D5D5),
+    darkGrey = Color(0xFF707070),
+    green = Color(0xFF13AC6B),
+    bgColor = Color(0xFFF4F4F4),
+    red = Color(0xFFD82B46);

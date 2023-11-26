@@ -2,6 +2,7 @@ import 'package:abyad/controllers/navigation_controller.dart';
 import 'package:abyad/models/view_models/navigation_item.dart';
 import 'package:abyad/screens/new_order_screen.dart';
 import 'package:abyad/screens/widgets/abyad_bar.dart';
+import 'package:abyad/screens/widgets/abyad_button.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const AbyadBar(),
         Container(
           margin: const EdgeInsets.only(top: 40, bottom: 80),
           height: 90,
@@ -23,85 +23,40 @@ class HomeScreen extends StatelessWidget {
           color: white,
         ),
         Consumer<NavigationController>(
-            builder: (context, navigationController, child) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: () {
-                  navigationController.navigateTo(
-                      const NewOrderScreen(
-                        orderType: OrderType.Ironing,
-                      ),
-                      index: 1);
-                },
-                child: Container(
+          builder: (context, navigationController, child) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AbyadButton(
+                  label: "Ironing",
+                  icon: "steaming",
                   height: 170,
                   width: 170,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: grey,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        Assets.iconify("steaming"),
-                        color: white,
-                        height: 60,
-                      ),
-                      Text(
-                        "Ironing",
-                        style: TextStyle(
-                          color: white,
-                          fontSize: 25,
+                  onPressed: () {
+                    navigationController.navigateTo(
+                        const NewOrderScreen(
+                          orderType: OrderType.Ironing,
                         ),
-                      ),
-                    ],
-                  ),
+                        index: 1);
+                  },
                 ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              InkWell(
-                onTap: () {
-                  navigationController.navigateTo(
-                      const NewOrderScreen(
-                        orderType: OrderType.CleaningIroning,
-                      ),
-                      index: 1);
-                },
-                child: Container(
+                AbyadButton(
+                  label: "Ironing & Cleaning",
+                  icon: "laundry",
                   height: 170,
                   width: 170,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: mainColor,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        Assets.iconify("laundry"),
-                        color: white,
-                        height: 75,
-                      ),
-                      Text(
-                        "Ironing & Cleaning",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: white,
-                          fontSize: 25,
+                  onPressed: () {
+                    navigationController.navigateTo(
+                        const NewOrderScreen(
+                          orderType: OrderType.CleaningIroning,
                         ),
-                      ),
-                    ],
-                  ),
+                        index: 1);
+                  },
                 ),
-              ),
-            ],
-          );
-        }),
+              ],
+            );
+          },
+        ),
       ],
     );
   }

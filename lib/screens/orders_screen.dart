@@ -1,3 +1,4 @@
+import 'package:abyad/screens/widgets/abyad_bar.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -6,14 +7,8 @@ class OrdersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "Orders Screen",
-        style: TextStyle(
-          color: mainColor,
-          fontSize: 25,
-        ),
-      ),
+    return const Column(
+      children: [],
     );
   }
 }

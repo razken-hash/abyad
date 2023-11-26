@@ -13,7 +13,6 @@ class NewOrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const AbyadBar(),
         AbyadBarTwo(orderType: orderType),
         Expanded(
           child: SingleChildScrollView(

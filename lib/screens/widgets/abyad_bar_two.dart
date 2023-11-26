@@ -28,7 +28,7 @@ class AbyadBarTwo extends StatelessWidget {
                           height: 32,
                         ),
                         const SizedBox(width: 10),
-                        Text(
+                        const Text(
                           "966",
                           style: TextStyle(
                             color: darkGrey,
@@ -36,8 +36,8 @@ class AbyadBarTwo extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8.0),
                           child: VerticalDivider(
                             thickness: 1,
                             width: 15,
@@ -71,7 +71,7 @@ class AbyadBarTwo extends StatelessWidget {
                           orderType == OrderType.Ironing
                               ? "Ironing"
                               : "Cleaning & Ironing",
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: mainColor,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -98,7 +98,7 @@ class AbyadBarTwo extends StatelessWidget {
                         Assets.iconify("shop"),
                         height: 25,
                       ),
-                      Text(
+                      const Text(
                         "Invoice 031123",
                         style: TextStyle(
                           color: darkGrey,
@@ -115,7 +115,7 @@ class AbyadBarTwo extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Total",
                             style: TextStyle(
                               color: darkGrey,
@@ -124,14 +124,14 @@ class AbyadBarTwo extends StatelessWidget {
                             ),
                           ),
                           RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               text: '32x ',
                               style: TextStyle(
                                 color: white,
                                 fontSize: 26,
                                 fontWeight: FontWeight.bold,
                               ),
-                              children: const <TextSpan>[
+                              children: <TextSpan>[
                                 TextSpan(
                                   text: 'Items',
                                   style: TextStyle(
@@ -145,13 +145,13 @@ class AbyadBarTwo extends StatelessWidget {
                         ],
                       ),
                       RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                           text: '320 ',
                           style: TextStyle(
                             color: white,
                             fontSize: 65,
                           ),
-                          children: const <TextSpan>[
+                          children: <TextSpan>[
                             TextSpan(
                               text: 'SAR',
                               style: TextStyle(

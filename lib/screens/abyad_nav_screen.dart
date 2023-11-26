@@ -1,4 +1,5 @@
 import 'package:abyad/controllers/navigation_controller.dart';
+import 'package:abyad/screens/widgets/abyad_bar.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class AbyadNavScreen extends StatelessWidget {
               backgroundColor: bgColor,
               body: Column(
                 children: [
+                  const AbyadBar(),
                   //! Content
                   Expanded(
                     child: navigationController.currentScreen,

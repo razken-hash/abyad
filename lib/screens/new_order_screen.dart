@@ -1,4 +1,3 @@
-import 'package:abyad/main.dart';
 import 'package:abyad/models/view_models/navigation_item.dart';
 import 'package:abyad/repositories/clothes_repo.dart';
 import 'package:abyad/screens/widgets/abyad_bar.dart';

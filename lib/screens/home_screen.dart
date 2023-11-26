@@ -14,48 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 10,
-          ),
-          child: Row(
-            children: [
-              SvgPicture.asset(
-                Assets.iconify("triangle"),
-                height: 33,
-                color: mainColor,
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Hello, AbdAllah",
-                    style: TextStyle(
-                      color: mainColor,
-                      fontSize: 25,
-                    ),
-                  ),
-                  Text(
-                    "User IP 031123",
-                    style: TextStyle(
-                      color: darkGrey,
-                      fontSize: 15,
-                    ),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              Image.asset(
-                Assets.imagify("abyad"),
-                height: 70,
-              ),
-            ],
-          ),
-        ),
+        AppBar(),
         Container(
           margin: const EdgeInsets.only(top: 40, bottom: 80),
           height: 90,

@@ -1,12 +1,9 @@
 import 'package:abyad/controllers/navigation_controller.dart';
 import 'package:abyad/models/view_models/navigation_item.dart';
 import 'package:abyad/screens/new_order_screen.dart';
-import 'package:abyad/screens/widgets/abyad_bar.dart';
 import 'package:abyad/screens/widgets/abyad_button.dart';
-import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {

@@ -46,14 +46,14 @@ class _ItemCardState extends State<ItemCard> {
               children: [
                 Text(
                   widget.clotheItem.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: white,
                     fontSize: 12,
                   ),
                 ),
                 const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 5.0),
                   child: VerticalDivider(
                     thickness: 1.5,
                     width: 1.5,
@@ -66,7 +66,7 @@ class _ItemCardState extends State<ItemCard> {
                     textAlign: TextAlign.center,
                     text: TextSpan(
                       text: '${widget.clotheItem.price}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: white,
                         fontSize: 20,
                       ),
@@ -91,7 +91,7 @@ class _ItemCardState extends State<ItemCard> {
             child: Center(
               child: Text(
                 '${widget.clotheItem.quantity}',
-                style: TextStyle(
+                style: const TextStyle(
                   color: white,
                   fontSize: 26,
                 ),
@@ -113,17 +113,17 @@ class _ItemCardState extends State<ItemCard> {
                   child: InkWell(
                     onTap: () {
                       setState(() {
-                        widget.clotheItem.quantity++;
+                        widget.clotheItem.quantity--;
                       });
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.remove,
                       color: white,
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 5.0),
                   child: VerticalDivider(
                     thickness: 1.5,
                     width: 1.5,
@@ -137,7 +137,7 @@ class _ItemCardState extends State<ItemCard> {
                         widget.clotheItem.quantity++;
                       });
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.add,
                       color: white,
                     ),

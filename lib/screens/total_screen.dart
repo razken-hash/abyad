@@ -1,4 +1,3 @@
-import 'package:abyad/models/view_models/navigation_item.dart';
 import 'package:abyad/screens/widgets/abyad_bar_two.dart';
 import 'package:abyad/screens/widgets/abyad_button.dart';
 import 'package:abyad/screens/widgets/abyad_check_box.dart';
@@ -12,7 +11,9 @@ class TotalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const AbyadBarTwo(orderType: OrderType.CleaningIroning),
+        const AbyadBarTwo(
+          showOrderType: false,
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
           child: Row(
@@ -32,7 +33,16 @@ class TotalScreen extends StatelessWidget {
               AbyadButton(
                 label: "Discount",
                 icon: "printer",
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        color: Colors.transparent,
+                      );
+                    },
+                  );
+                },
               ),
               const Spacer(),
               Container(

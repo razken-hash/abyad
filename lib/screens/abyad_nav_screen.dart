@@ -17,8 +17,8 @@ class AbyadNavScreen extends StatelessWidget {
           canPop: false,
           onPopInvoked: (result) {
             navigationController.navigateTo(
-              navigationController.screens.first,
-              index: 0,
+              navigationController.screens[2],
+              index: 2,
             );
           },
           child: SafeArea(

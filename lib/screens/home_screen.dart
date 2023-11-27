@@ -1,6 +1,6 @@
 import 'package:abyad/controllers/navigation_controller.dart';
-import 'package:abyad/models/view_models/navigation_item.dart';
-import 'package:abyad/screens/new_order_screen.dart';
+import 'package:abyad/controllers/new_order_controller.dart';
+import 'package:abyad/models/order.dart';
 import 'package:abyad/screens/widgets/abyad_button.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -33,11 +33,12 @@ class HomeScreen extends StatelessWidget {
                   iconSize: 50,
                   color: grey,
                   onPressed: () {
+                    Provider.of<NewOrderController>(context, listen: false)
+                        .changeOrderType(OrderType.Ironing);
                     navigationController.navigateTo(
-                        const NewOrderScreen(
-                          orderType: OrderType.Ironing,
-                        ),
-                        index: 1);
+                      navigationController.screens[1],
+                      index: 1,
+                    );
                   },
                 ),
                 const SizedBox(width: 20),
@@ -49,11 +50,12 @@ class HomeScreen extends StatelessWidget {
                   iconSize: 50,
                   labelSize: 25,
                   onPressed: () {
+                    Provider.of<NewOrderController>(context, listen: false)
+                        .changeOrderType(OrderType.CleaningIroning);
                     navigationController.navigateTo(
-                        const NewOrderScreen(
-                          orderType: OrderType.CleaningIroning,
-                        ),
-                        index: 1);
+                      navigationController.screens[1],
+                      index: 1,
+                    );
                   },
                 ),
               ],

@@ -23,7 +23,7 @@ class AbyadBar extends StatelessWidget {
           const SizedBox(
             width: 15,
           ),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(

@@ -29,6 +29,9 @@ class HomeScreen extends StatelessWidget {
                   icon: "steaming",
                   height: 170,
                   width: 170,
+                  labelSize: 25,
+                  iconSize: 50,
+                  color: grey,
                   onPressed: () {
                     navigationController.navigateTo(
                         const NewOrderScreen(
@@ -37,11 +40,14 @@ class HomeScreen extends StatelessWidget {
                         index: 1);
                   },
                 ),
+                const SizedBox(width: 20),
                 AbyadButton(
                   label: "Ironing & Cleaning",
                   icon: "laundry",
                   height: 170,
                   width: 170,
+                  iconSize: 50,
+                  labelSize: 25,
                   onPressed: () {
                     navigationController.navigateTo(
                         const NewOrderScreen(

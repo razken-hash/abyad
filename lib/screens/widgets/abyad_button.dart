@@ -6,10 +6,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AbyadButton extends StatelessWidget {
   final String label, icon;
   final void Function()? onPressed;
-  double height, width;
+  final double height, width;
   final Color color;
+  final double iconSize, labelSize;
 
-  AbyadButton({
+  const AbyadButton({
     super.key,
     required this.label,
     required this.icon,
@@ -17,6 +18,8 @@ class AbyadButton extends StatelessWidget {
     this.color = mainColor,
     this.height = 90,
     this.width = 100,
+    this.labelSize = 17,
+    this.iconSize = 40,
   });
 
   @override
@@ -35,13 +38,14 @@ class AbyadButton extends StatelessWidget {
           children: [
             SvgPicture.asset(
               Assets.iconify(icon),
-              height: 44,
+              height: iconSize,
             ),
             Text(
               label,
-              style: const TextStyle(
+              textAlign: TextAlign.center,
+              style: TextStyle(
                 color: white,
-                fontSize: 17,
+                fontSize: labelSize,
               ),
             ),
           ],

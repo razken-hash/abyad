@@ -5,8 +5,8 @@ import 'package:abyad/screens/widgets/item_card.dart';
 import 'package:flutter/material.dart';
 
 class NewOrderScreen extends StatelessWidget {
-  final OrderType orderType;
-  const NewOrderScreen({super.key, required this.orderType});
+  final OrderType? orderType;
+  const NewOrderScreen({super.key, this.orderType});
 
   @override
   Widget build(BuildContext context) {

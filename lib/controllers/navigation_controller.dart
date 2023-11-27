@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:abyad/models/view_models/navigation_item.dart';
+import 'package:abyad/screens/home_screen.dart';
 import 'package:abyad/screens/new_order_screen.dart';
 import 'package:abyad/screens/orders_screen.dart';
 import 'package:abyad/screens/total_screen.dart';
@@ -9,7 +10,7 @@ import 'package:flutter/material.dart';
 class NavigationController extends ChangeNotifier {
   final List<NavigationItem> _screens = [
     NavigationItem(
-      screen: const TotalScreen(),
+      screen: const HomeScreen(),
       label: "Home",
       icon: 'home',
     ),

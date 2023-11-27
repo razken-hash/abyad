@@ -68,46 +68,62 @@ class TotalScreen extends StatelessWidget {
             child: Column(
               children: List.filled(
                 12,
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    children: [
-                      AbyadCheckBox(value: true, onChanged: (value) {}),
-                      const SizedBox(width: 10),
-                      const Text(
-                        "1 x Thobe",
-                        style: TextStyle(
-                          fontSize: 28,
-                          color: darkGrey,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Text(
-                        "Ironing",
-                        style: TextStyle(
-                          fontSize: 28,
-                          color: darkGrey,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Text(
-                        "3.00 SAR",
-                        style: TextStyle(
-                          fontSize: 28,
-                          color: darkGrey,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
+                BuyItemTile(
+                  onSelect: () {},
                 ),
               ),
             ),
           ),
         ),
       ],
+    );
+  }
+}
+
+class BuyItemTile extends StatelessWidget {
+  final Function? onSelect;
+  const BuyItemTile({
+    super.key,
+    this.onSelect,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 8),
+      child: Row(
+        children: [
+          if (onSelect != null)
+            AbyadCheckBox(value: true, onChanged: (value) {}),
+          if (onSelect != null) const SizedBox(width: 10),
+          const Text(
+            "1 x Thobe",
+            style: TextStyle(
+              fontSize: 28,
+              color: darkGrey,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const Spacer(),
+          const Text(
+            "Ironing",
+            style: TextStyle(
+              fontSize: 28,
+              color: darkGrey,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const Spacer(),
+          const Text(
+            "3.00 SAR",
+            style: TextStyle(
+              fontSize: 28,
+              color: darkGrey,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

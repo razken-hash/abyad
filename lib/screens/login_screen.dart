@@ -103,7 +103,10 @@ class LoginScreen extends StatelessWidget {
                     InkWell(
                       onTap: () async {
                         if (_formKey.currentState!.validate()) {
-                          bool response = loginController.login();
+                          bool response = loginController.login(
+                            username: _usernameController.text,
+                            password: _passwordController.text,
+                          );
                           if (response) {
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(

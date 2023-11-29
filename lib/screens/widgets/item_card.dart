@@ -1,7 +1,9 @@
+import 'package:abyad/controllers/new_order_controller.dart';
 import 'package:abyad/models/clothe_item.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ItemCard extends StatefulWidget {
   final ClotheItem clotheItem;
@@ -107,44 +109,50 @@ class _ItemCardState extends State<ItemCard> {
                   const BorderRadius.vertical(bottom: Radius.circular(20)),
               color: mainColor.withOpacity(.7),
             ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        widget.clotheItem.quantity--;
-                      });
-                    },
-                    child: const Icon(
-                      Icons.remove,
+            child: Consumer<NewOrderController>(
+                builder: (context, newOrderController, child) {
+              return Row(
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        newOrderController.removeItem(widget.clotheItem);
+                        setState(() {
+                          widget.clotheItem.quantity--;
+                        });
+                      },
+                      child: const Icon(
+                        Icons.remove,
+                        color: white,
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5.0),
+                    child: VerticalDivider(
+                      thickness: 1.5,
+                      width: 1.5,
                       color: white,
                     ),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.0),
-                  child: VerticalDivider(
-                    thickness: 1.5,
-                    width: 1.5,
-                    color: white,
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        widget.clotheItem.quantity++;
-                      });
-                    },
-                    child: const Icon(
-                      Icons.add,
-                      color: white,
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        newOrderController.addItem(widget.clotheItem);
+
+                        setState(() {
+                          widget.clotheItem.quantity++;
+                        });
+                      },
+                      child: const Icon(
+                        Icons.add,
+                        color: white,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              );
+            }),
           ),
         ],
       ),

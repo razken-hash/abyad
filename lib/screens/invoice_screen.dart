@@ -1,6 +1,7 @@
 import 'package:abyad/screens/total_screen.dart';
 import 'package:abyad/screens/widgets/abyad_bar_two.dart';
-import 'package:abyad/screens/widgets/abyad_button.dart';
+import 'package:abyad/screens/widgets/abyad_icon_button.dart';
+import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -16,43 +17,43 @@ class InvoiceScreen extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            AbyadButton(
+            AbyadIconButton(
               label: "Print",
-              icon: "printer",
+              icon: Assets.iconify("printer"),
               onPressed: () {},
             ),
-            AbyadButton(
+            AbyadIconButton(
               label: "Cancel",
-              icon: "printer",
+              icon: Assets.iconify("printer"),
               onPressed: () {},
             ),
-            AbyadButton(
+            AbyadIconButton(
               label: "Pieces Correct",
-              icon: "check",
+              icon: Assets.iconify("check"),
               onPressed: () {},
               color: mainColor,
               iconSize: 30,
               labelSize: 14,
             ),
-            AbyadButton(
+            AbyadIconButton(
               label: "Under Cleaning",
-              icon: "cleaning",
+              icon: Assets.iconify("cleaning"),
               onPressed: () {},
               color: grey,
               iconSize: 30,
               labelSize: 14,
             ),
-            AbyadButton(
+            AbyadIconButton(
               label: "Send notification",
-              icon: "delivery",
+              icon: Assets.iconify("delivery"),
               onPressed: () {},
               color: grey,
               iconSize: 30,
               labelSize: 14,
             ),
-            AbyadButton(
+            AbyadIconButton(
               label: "Complete",
-              icon: "flag",
+              icon: Assets.iconify("flag"),
               onPressed: () {},
               color: grey,
             ),

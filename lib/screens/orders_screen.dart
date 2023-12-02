@@ -1,6 +1,6 @@
 import 'package:abyad/controllers/navigation_controller.dart';
 import 'package:abyad/screens/invoice_screen.dart';
-import 'package:abyad/screens/widgets/abyad_button.dart';
+import 'package:abyad/screens/widgets/abyad_icon_button.dart';
 import 'package:abyad/screens/widgets/abyad_date_box.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
@@ -19,18 +19,18 @@ class OrdersScreen extends StatelessWidget {
           padding: const EdgeInsets.all(25.0),
           child: Row(
             children: [
-              AbyadButton(
+              AbyadIconButton(
                 label: "Online",
-                icon: "online",
+                icon: Assets.iconify("online"),
                 onPressed: () {},
                 color: grey,
                 height: 75,
                 width: 85,
               ),
               const SizedBox(width: 25),
-              AbyadButton(
+              AbyadIconButton(
                 label: "Walk-in",
-                icon: "shop",
+                icon: Assets.iconify("shop"),
                 onPressed: () {},
                 color: grey,
                 height: 75,

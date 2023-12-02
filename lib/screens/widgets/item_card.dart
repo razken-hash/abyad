@@ -1,13 +1,13 @@
 import 'package:abyad/controllers/new_order_controller.dart';
-import 'package:abyad/models/clothe_item.dart';
+import 'package:abyad/models/order.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ItemCard extends StatefulWidget {
-  final ClotheItem clotheItem;
-  const ItemCard({super.key, required this.clotheItem});
+  final LibasOrder libasOrder;
+  const ItemCard({super.key, required this.libasOrder});
 
   @override
   State<ItemCard> createState() => _ItemCardState();
@@ -25,7 +25,7 @@ class _ItemCardState extends State<ItemCard> {
         image: DecorationImage(
           image: AssetImage(
             Assets.imagify(
-              widget.clotheItem.name.toLowerCase(),
+              widget.libasOrder.libasItem.name.toLowerCase(),
               directory: "${Assets.defaultImagesDirectory}/clothes",
             ),
           ),
@@ -47,7 +47,7 @@ class _ItemCardState extends State<ItemCard> {
             child: Row(
               children: [
                 Text(
-                  widget.clotheItem.name,
+                  widget.libasOrder.libasItem.name,
                   style: const TextStyle(
                     color: white,
                     fontSize: 12,
@@ -67,14 +67,14 @@ class _ItemCardState extends State<ItemCard> {
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      text: '${widget.clotheItem.price}',
+                      text: '${widget.libasOrder.price}',
                       style: const TextStyle(
                         color: white,
                         fontSize: 20,
                       ),
                       children: const <TextSpan>[
                         TextSpan(
-                          text: 'SAR',
+                          text: ' SAR',
                           style: TextStyle(
                             fontSize: 11,
                           ),
@@ -92,7 +92,7 @@ class _ItemCardState extends State<ItemCard> {
             color: mainColor.withOpacity(.7),
             child: Center(
               child: Text(
-                '${widget.clotheItem.quantity}',
+                '${widget.libasOrder.quantity}',
                 style: const TextStyle(
                   color: white,
                   fontSize: 26,
@@ -116,9 +116,9 @@ class _ItemCardState extends State<ItemCard> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        newOrderController.removeItem(widget.clotheItem);
+                        newOrderController.removeItem(widget.libasOrder);
                         setState(() {
-                          widget.clotheItem.quantity--;
+                          widget.libasOrder.quantity--;
                         });
                       },
                       child: const Icon(
@@ -138,10 +138,10 @@ class _ItemCardState extends State<ItemCard> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        newOrderController.addItem(widget.clotheItem);
+                        newOrderController.addItem(widget.libasOrder);
 
                         setState(() {
-                          widget.clotheItem.quantity++;
+                          widget.libasOrder.quantity++;
                         });
                       },
                       child: const Icon(

@@ -1,15 +1,26 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:abyad/models/clothe_item.dart';
 import 'package:flutter/material.dart';
 
 import 'package:abyad/models/order.dart';
 
 class NewOrderController extends ChangeNotifier {
   late OrderType currentOrderType;
-  Order order = Order.empty();
+  Order order = Order(phoneNumber: "");
+
+  List<LibasOrder> get libasOrders => currentOrderType == OrderType.Ironing
+      ? order.ironingOrders
+      : order.cleaningOrders;
+
+  List<LibasOrder> get ironingItems => order.libasOrders
+      .where((libas) => libas.orderType == OrderType.Ironing)
+      .toList();
+
+  List<LibasOrder> get cleaningItems => order.libasOrders
+      .where((libas) => libas.orderType == OrderType.CleaningIroning)
+      .toList();
 
   NewOrderController() {
     currentOrderType = OrderType.CleaningIroning;
+    order = Order(phoneNumber: "");
   }
 
   void updatePhoneNumber(String phoneNumber) {
@@ -24,13 +35,15 @@ class NewOrderController extends ChangeNotifier {
     }
   }
 
-  void addItem(ClotheItem item) {
-    order.clothes.add(item);
+  void addItem(LibasOrder libasOrder) {
+    libasOrder.quantity++;
     notifyListeners();
   }
 
-  void removeItem(ClotheItem item) {
-    order.clothes.remove(item);
+  void removeItem(LibasOrder libasOrder) {
+    if (libasOrder.quantity > 0) {
+      libasOrder.quantity--;
+    }
     notifyListeners();
   }
 }

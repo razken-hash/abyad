@@ -1,5 +1,6 @@
 import 'package:abyad/controllers/login_controller.dart';
 import 'package:abyad/screens/abyad_nav_screen.dart';
+import 'package:abyad/screens/widgets/abyad_text_button.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
@@ -100,8 +101,8 @@ class LoginScreen extends StatelessWidget {
                       },
                     ),
                     const SizedBox(height: 40),
-                    InkWell(
-                      onTap: () async {
+                    AbyadTextButton(
+                      onPressed: () async {
                         if (_formKey.currentState!.validate()) {
                           bool response = loginController.login(
                             username: _usernameController.text,
@@ -132,24 +133,9 @@ class LoginScreen extends StatelessWidget {
                           }
                         }
                       },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: mainColor,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        height: 80,
-                        width: 400,
-                        child: const Center(
-                          child: Text(
-                            "Login",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: white,
-                              fontSize: 24,
-                            ),
-                          ),
-                        ),
-                      ),
+                      label: "Login",
+                      labelSize: 24,
+                      width: double.infinity,
                     ),
                   ],
                 ),

@@ -1,7 +1,9 @@
 import 'package:abyad/controllers/navigation_controller.dart';
 import 'package:abyad/controllers/new_order_controller.dart';
 import 'package:abyad/models/order.dart';
-import 'package:abyad/screens/widgets/abyad_button.dart';
+import 'package:abyad/screens/choices_screen/alert_screen.dart';
+import 'package:abyad/screens/widgets/abyad_icon_button.dart';
+import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,27 +26,58 @@ class HomeScreen extends StatelessWidget {
             return Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AbyadButton(
+                AbyadIconButton(
                   label: "Ironing",
-                  icon: "steaming",
+                  icon: Assets.iconify("steaming"),
                   height: 170,
                   width: 170,
                   labelSize: 25,
                   iconSize: 50,
                   color: grey,
                   onPressed: () {
-                    Provider.of<NewOrderController>(context, listen: false)
-                        .changeOrderType(OrderType.Ironing);
-                    navigationController.navigateTo(
-                      navigationController.screens[1],
-                      index: 1,
+                    // Provider.of<NewOrderController>(context, listen: false)
+                    //     .changeOrderType(OrderType.Ironing);
+                    // navigationController.navigateTo(
+                    //   navigationController.screens[1],
+                    //   index: 1,
+                    // );
+                    // showDialog(
+                    //   context: context,
+                    //   barrierDismissible: false,
+                    //   builder: (context) => AlertDialog(
+                    //     content: CancelOrderScreen(),
+                    //   ),
+                    // );
+                    // showDialog(
+                    //   context: context,
+                    //   barrierDismissible: true,
+                    //   builder: (context) => const DiscountScreen(),
+                    // );
+                    // showDialog(
+                    //   context: context,
+                    //   barrierDismissible: true,
+                    //   builder: (context) => const ChangePaymentMethodScreen(),
+                    // );
+                    // showDialog(
+                    //   context: context,
+                    //   barrierDismissible: true,
+                    //   builder: (context) => const ChangeServiceScreen(),
+                    // );
+                    showDialog(
+                      context: context,
+                      barrierDismissible: true,
+                      builder: (context) => const AlertDialog(
+                        content: AlertScreen(
+                          alertMessage: "This discount code is not correct",
+                        ),
+                      ),
                     );
                   },
                 ),
                 const SizedBox(width: 20),
-                AbyadButton(
+                AbyadIconButton(
                   label: "Ironing & Cleaning",
-                  icon: "laundry",
+                  icon: Assets.iconify("laundry"),
                   height: 170,
                   width: 170,
                   iconSize: 50,

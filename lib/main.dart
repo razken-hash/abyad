@@ -1,3 +1,4 @@
+import 'package:abyad/screens/abyad_nav_screen.dart';
 import 'package:abyad/screens/login_screen.dart';
 import 'package:abyad/utils/providers.dart';
 import 'package:desktop_window/desktop_window.dart';
@@ -21,7 +22,7 @@ class AbyadApp extends StatelessWidget {
         return MaterialApp(
           theme: ThemeData.light(useMaterial3: true),
           debugShowCheckedModeBanner: false,
-          home: LoginScreen(),
+          home: const AbyadNavScreen(),
         );
       },
     );

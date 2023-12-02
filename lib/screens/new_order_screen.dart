@@ -1,5 +1,5 @@
 import 'package:abyad/controllers/new_order_controller.dart';
-import 'package:abyad/repositories/clothes_repo.dart';
+import 'package:abyad/models/order.dart';
 import 'package:abyad/screens/widgets/abyad_bar_two.dart';
 import 'package:abyad/screens/widgets/item_card.dart';
 import 'package:flutter/material.dart';
@@ -19,18 +19,23 @@ class NewOrderScreen extends StatelessWidget {
           const AbyadBarTwo(),
           Expanded(
             child: SingleChildScrollView(
-              child: Column(
-                children: List.generate(
-                  ClothesRepo.clothe_items.length ~/ 4,
-                  (i) => Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: List.generate(4, (j) {
-                      return ItemCard(
-                          clotheItem: ClothesRepo.clothe_items[4 * i + j]);
-                    }),
+              child: Builder(builder: (context) {
+                List<LibasOrder> libasOrders = newOrderController.libasOrders;
+
+                return Column(
+                  children: List.generate(
+                    libasOrders.length ~/ 4,
+                    (i) => Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(4, (j) {
+                        return ItemCard(
+                          libasOrder: libasOrders[4 * i + j],
+                        );
+                      }),
+                    ),
                   ),
-                ),
-              ),
+                );
+              }),
             ),
           ),
         ],

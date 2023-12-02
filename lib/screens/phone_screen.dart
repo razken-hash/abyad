@@ -1,7 +1,6 @@
 import 'package:abyad/controllers/navigation_controller.dart';
 import 'package:abyad/controllers/new_order_controller.dart';
 import 'package:abyad/controllers/phone_controller.dart';
-import 'package:abyad/screens/new_order_screen.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';

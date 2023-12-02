@@ -1,6 +1,7 @@
 import 'package:abyad/screens/widgets/abyad_bar_two.dart';
-import 'package:abyad/screens/widgets/abyad_button.dart';
+import 'package:abyad/screens/widgets/abyad_icon_button.dart';
 import 'package:abyad/screens/widgets/abyad_check_box.dart';
+import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -18,21 +19,21 @@ class TotalScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 40),
           child: Row(
             children: [
-              AbyadButton(
+              AbyadIconButton(
                 label: "Print",
-                icon: "printer",
+                icon: Assets.iconify("printer"),
                 onPressed: () {},
               ),
               const SizedBox(width: 10),
-              AbyadButton(
+              AbyadIconButton(
                 label: "Cancel",
-                icon: "x",
+                icon: Assets.iconify("x"),
                 onPressed: () {},
               ),
               const SizedBox(width: 10),
-              AbyadButton(
+              AbyadIconButton(
                 label: "Discount",
-                icon: "printer",
+                icon: Assets.iconify("printer"),
                 onPressed: () {
                   showDialog(
                     context: context,

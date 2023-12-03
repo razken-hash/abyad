@@ -82,7 +82,8 @@ class PhoneScreen extends StatelessWidget {
                   onTap: () {
                     Provider.of<NavigationController>(context, listen: false)
                         .navigateTo(
-                      Provider.of<NavigationController>(context).screens[1],
+                      Provider.of<NavigationController>(context, listen: false)
+                          .screens[1],
                       index: 1,
                     );
                   },
@@ -121,7 +122,8 @@ class PhoneScreen extends StatelessWidget {
                     );
                     Provider.of<NavigationController>(context, listen: false)
                         .navigateTo(
-                      Provider.of<NavigationController>(context).screens[1],
+                      Provider.of<NavigationController>(context, listen: false)
+                          .screens[1],
                       index: 1,
                     );
                   },

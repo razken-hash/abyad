@@ -1,6 +1,7 @@
 import 'package:abyad/controllers/navigation_controller.dart';
 import 'package:abyad/controllers/new_order_controller.dart';
 import 'package:abyad/models/order.dart';
+import 'package:abyad/screens/choices_screen/change_service_screen.dart';
 import 'package:abyad/screens/phone_screen.dart';
 import 'package:abyad/screens/total_screen.dart';
 import 'package:abyad/utils/assets.dart';
@@ -84,9 +85,11 @@ class AbyadBarTwo extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             if (showOrderType) {
-                              navigationController.navigateTo(
-                                navigationController.screens[2],
-                                index: 2,
+                              showDialog(
+                                context: context,
+                                barrierDismissible: true,
+                                builder: (context) =>
+                                    const ChangeServiceScreen(),
                               );
                             }
                           },
@@ -176,14 +179,15 @@ class AbyadBarTwo extends StatelessWidget {
                                     ),
                                   ),
                                   RichText(
-                                    text: const TextSpan(
-                                      text: '32x ',
-                                      style: TextStyle(
+                                    text: TextSpan(
+                                      text:
+                                          '${newOrderController.order.totalCount}x ',
+                                      style: const TextStyle(
                                         color: white,
                                         fontSize: 26,
                                         fontWeight: FontWeight.bold,
                                       ),
-                                      children: <TextSpan>[
+                                      children: const <TextSpan>[
                                         TextSpan(
                                           text: 'Items',
                                           style: TextStyle(
@@ -197,15 +201,16 @@ class AbyadBarTwo extends StatelessWidget {
                                 ],
                               ),
                               RichText(
-                                text: const TextSpan(
-                                  text: '320 ',
-                                  style: TextStyle(
+                                text: TextSpan(
+                                  text:
+                                      "${newOrderController.order.totalPrice}",
+                                  style: const TextStyle(
                                     color: white,
                                     fontSize: 65,
                                   ),
-                                  children: <TextSpan>[
+                                  children: const <TextSpan>[
                                     TextSpan(
-                                      text: 'SAR',
+                                      text: ' SAR',
                                       style: TextStyle(
                                         fontSize: 21,
                                       ),

@@ -1,7 +1,10 @@
+import 'package:abyad/controllers/new_order_controller.dart';
+import 'package:abyad/models/order.dart';
 import 'package:abyad/screens/widgets/abyad_icon_button.dart';
 import 'package:abyad/utils/assets.dart';
 import 'package:abyad/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ChangeServiceScreen extends StatelessWidget {
   const ChangeServiceScreen({super.key});
@@ -22,7 +25,11 @@ class ChangeServiceScreen extends StatelessWidget {
               labelSize: 25,
               iconSize: 50,
               color: grey,
-              onPressed: () {},
+              onPressed: () {
+                Provider.of<NewOrderController>(context, listen: false)
+                    .changeOrderType(OrderType.Ironing);
+                Navigator.pop(context);
+              },
             ),
             const SizedBox(width: 20),
             AbyadIconButton(
@@ -32,7 +39,11 @@ class ChangeServiceScreen extends StatelessWidget {
               width: 170,
               iconSize: 50,
               labelSize: 25,
-              onPressed: () {},
+              onPressed: () {
+                Provider.of<NewOrderController>(context, listen: false)
+                    .changeOrderType(OrderType.CleaningIroning);
+                Navigator.pop(context);
+              },
             ),
           ],
         ),

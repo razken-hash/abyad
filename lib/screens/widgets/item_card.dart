@@ -117,9 +117,6 @@ class _ItemCardState extends State<ItemCard> {
                     child: InkWell(
                       onTap: () {
                         newOrderController.removeItem(widget.libasOrder);
-                        setState(() {
-                          widget.libasOrder.quantity--;
-                        });
                       },
                       child: const Icon(
                         Icons.remove,
@@ -139,10 +136,6 @@ class _ItemCardState extends State<ItemCard> {
                     child: InkWell(
                       onTap: () {
                         newOrderController.addItem(widget.libasOrder);
-
-                        setState(() {
-                          widget.libasOrder.quantity++;
-                        });
                       },
                       child: const Icon(
                         Icons.add,

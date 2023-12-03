@@ -10,14 +10,6 @@ class NewOrderController extends ChangeNotifier {
       ? order.ironingOrders
       : order.cleaningOrders;
 
-  List<LibasOrder> get ironingItems => order.libasOrders
-      .where((libas) => libas.orderType == OrderType.Ironing)
-      .toList();
-
-  List<LibasOrder> get cleaningItems => order.libasOrders
-      .where((libas) => libas.orderType == OrderType.CleaningIroning)
-      .toList();
-
   NewOrderController() {
     currentOrderType = OrderType.CleaningIroning;
     order = Order(phoneNumber: "");

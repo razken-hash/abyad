@@ -19,12 +19,41 @@ class LibasOrder {
 
 class Order {
   late List<LibasOrder> libasOrders;
+
   List<LibasOrder> get ironingOrders => libasOrders
       .where((order) => order.orderType == OrderType.Ironing)
       .toList();
+
   List<LibasOrder> get cleaningOrders => libasOrders
       .where((order) => order.orderType == OrderType.CleaningIroning)
       .toList();
+
+  List<LibasOrder> get orderItems =>
+      libasOrders.where((order) => order.quantity > 0).toList();
+
+  List<LibasOrder> get orderIroningItems => orderItems
+      .where((order) => order.orderType == OrderType.Ironing)
+      .toList();
+
+  List<LibasOrder> get orderCleaningItems => orderItems
+      .where((order) => order.orderType == OrderType.CleaningIroning)
+      .toList();
+
+  int get totalPrice {
+    int sum = 0;
+    for (var libas in libasOrders) {
+      sum += libas.quantity * libas.price;
+    }
+    return sum;
+  }
+
+  int get totalCount {
+    int count = 0;
+    for (var libas in libasOrders) {
+      count += libas.quantity;
+    }
+    return count;
+  }
 
   String phoneNumber;
   Order({
@@ -36,7 +65,7 @@ class Order {
         ...LibasRepo.libasItems.map(
           (libas) => LibasOrder(
             libasItem: libas,
-            orderType: OrderType.CleaningIroning,
+            orderType: OrderType.Ironing,
           ),
         ),
         ...LibasRepo.libasItems.map(

@@ -35,12 +35,12 @@ class HomeScreen extends StatelessWidget {
                   iconSize: 50,
                   color: grey,
                   onPressed: () {
-                    // Provider.of<NewOrderController>(context, listen: false)
-                    //     .changeOrderType(OrderType.Ironing);
-                    // navigationController.navigateTo(
-                    //   navigationController.screens[1],
-                    //   index: 1,
-                    // );
+                    Provider.of<NewOrderController>(context, listen: false)
+                        .changeOrderType(OrderType.Ironing);
+                    navigationController.navigateTo(
+                      navigationController.screens[1],
+                      index: 1,
+                    );
                     // showDialog(
                     //   context: context,
                     //   barrierDismissible: false,
@@ -58,20 +58,16 @@ class HomeScreen extends StatelessWidget {
                     //   barrierDismissible: true,
                     //   builder: (context) => const ChangePaymentMethodScreen(),
                     // );
+
                     // showDialog(
                     //   context: context,
                     //   barrierDismissible: true,
-                    //   builder: (context) => const ChangeServiceScreen(),
+                    //   builder: (context) => const AlertDialog(
+                    //     content: AlertScreen(
+                    //       alertMessage: "This discount code is not correct",
+                    //     ),
+                    //   ),
                     // );
-                    showDialog(
-                      context: context,
-                      barrierDismissible: true,
-                      builder: (context) => const AlertDialog(
-                        content: AlertScreen(
-                          alertMessage: "This discount code is not correct",
-                        ),
-                      ),
-                    );
                   },
                 ),
                 const SizedBox(width: 20),
